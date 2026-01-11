@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request - Learn Binary Trading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6C63FF 0%, #5548E0 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .app-name {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .warning-icon {
+            color: #856404;
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            color: #856404;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #6C63FF;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background-color: #f8f9ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #6C63FF;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .step-list {
+            list-style-type: none;
+        }
+
+        .step-item {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #6C63FF;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .email-form {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .form-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6C63FF;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #6C63FF 0%, #5548E0 100%);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .contact-title {
+            color: #6C63FF;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .email-link {
+            color: #6C63FF;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .app-name {
+                font-size: 2.2rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="app-name">Learn Binary Trading</h1>
+            <h2 class="page-title">Data Deletion Request</h2>
+            <p class="subtitle">Request permanent deletion of your personal data from our systems</p>
+        </div>
+
+        <div class="content">
+            <div class="warning-box">
+                <div class="warning-icon">⚠️</div>
+                <div class="warning-text">
+                    <strong>Important:</strong> Deleting your data is permanent and cannot be undone. All your learning progress, bookmarks, posts, and account information will be permanently removed.
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">What Data Gets Deleted?</h3>
+                <div class="info-box">
+                    <h4 class="info-title">The following data will be permanently deleted:</h4>
+                    <ul>
+                        <li>Your account information (email, name, profile)</li>
+                        <li>All learning progress and bookmarks</li>
+                        <li>Community posts and comments</li>
+                        <li>Support ticket history</li>
+                        <li>Reading history and preferences</li>
+                        <li>Push notification tokens</li>
+                        <li>All associated metadata and logs</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4 class="info-title">What may be retained:</h4>
+                    <ul>
+                        <li>Anonymized usage statistics (not linked to you personally)</li>
+                        <li>Legal compliance records (if required by law)</li>
+                        <li>Backup data for up to 30 days (automatically deleted)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">How to Delete Your Data</h3>
+                <ol class="step-list">
+                    <li class="step-item">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Delete Through the App (Recommended)</h4>
+                        <p>Open Learn Binary Trading app → Settings → Delete Account</p>
+                        <p><em>This is the fastest and most secure method</em></p>
+                    </li>
+                    
+                    <li class="step-item">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Request via Email</h4>
+                        <p>Send an email to our support address with your request details</p>
+                        <p><em>Use the form below or email directly</em></p>
+                    </li>
+                    
+                    <li class="step-item">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title">Verification Process</h4>
+                        <p>We'll verify your identity by asking for your registered email</p>
+                        <p><em>For security, we need to confirm it's really you</em></p>
+                    </li>
+                    
+                    <li class="step-item">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title">Deletion Completion</h4>
+                        <p>We'll process your request within 7 business days and send confirmation</p>
+                        <p><em>You'll receive an email when deletion is complete</em></p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="email-form">
+                <h3 class="form-title">Submit Data Deletion Request</h3>
+                <p>Fill out this form to request data deletion. We'll email you for verification.</p>
+                
+                <div class="form-group">
+                    <label for="email">Your Registered Email *</label>
+                    <input type="email" id="email" placeholder="Enter the email you used for your account" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Your display name (optional)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reason">Reason for Deletion (Optional)</label>
+                    <textarea id="reason" placeholder="Tell us why you're requesting deletion..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmation">
+                        <input type="checkbox" id="confirmation" required>
+                        I understand that deleting my data is permanent and cannot be undone
+                    </label>
+                </div>
+                
+                <button class="submit-btn" onclick="submitRequest()">Submit Deletion Request</button>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="contact-title">Direct Email Contact</h3>
+                <p>You can also send your deletion request directly to:</p>
+                <a href="mailto:raashidk.official@gmail.com?subject=Data%20Deletion%20Request&body=Please%20delete%20my%20data%20from%20Learn%20Binary%20Trading.%0D%0A%0D%0ARegistered%20Email%3A%0D%0AName%3A%0D%0AReason%20(optional)%3A" class="email-link">
+                    raashidk.official@gmail.com
+                </a>
+                <p>Include your registered email address in the message.</p>
+                
+                <a href="index.html" class="privacy-link">← Back to Privacy Policy</a>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Frequently Asked Questions</h3>
+                <div class="info-box">
+                    <h4 class="info-title">How long does deletion take?</h4>
+                    <p>We process requests within 7 business days. You'll receive email confirmation when complete.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4 class="info-title">Can I recover my data after deletion?</h4>
+                    <p>No. Once deleted, your data cannot be recovered. Make sure you have exported any important information first.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4 class="info-title">What if I want to use the app again?</h4>
+                    <p>You'll need to create a new account. All previous data will be gone.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h4 class="info-title">Is my data really deleted or just hidden?</h4>
+                    <p>Your personal data is permanently deleted from our active databases. Backup copies are automatically deleted within 30 days.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Learn Binary Trading. All rights reserved.</p>
+            <p>Data Deletion Request Portal | Version 1.0</p>
+            <a href="index.html" class="back-link">View Privacy Policy →</a>
+        </div>
+    </div>
+
+    <script>
+        function submitRequest() {
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const reason = document.getElementById('reason').value;
+            const confirmation = document.getElementById('confirmation').checked;
+            
+            if (!email) {
+                alert('Please enter your registered email address.');
+                return;
+            }
+            
+            if (!confirmation) {
+                alert('Please confirm that you understand deletion is permanent.');
+                return;
+            }
+            
+            // Create mailto link
+            const subject = 'Data Deletion Request - Learn Binary Trading';
+            const body = `Please delete my data from Learn Binary Trading.
+
+Registered Email: ${email}
+Name: ${name || 'Not provided'}
+Reason for deletion: ${reason || 'Not provided'}
+
+I understand that deleting my data is permanent and cannot be undone.`;
+            
+            const mailtoLink = `mailto:raashidk.official@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert('Your request has been prepared. Please send the email that opens to complete your data deletion request.');
+        }
+    </script>
+</body>
+</html>
